@@ -1,9 +1,8 @@
-import { type NextPage } from "next";
 import { api } from "../utils/api";
 import Head from "next/head";
 import { OperatorCard } from "../components/OperatorCard";
 
-const Home: NextPage = () => {
+const Home = () => {
   const mutation = api.operator.getOperator.useMutation();
 
   const pickOperator = (role: string) => {
@@ -73,9 +72,9 @@ const Home: NextPage = () => {
           </div>
           <div className="">
             <OperatorCard
-              name={mutation.data?.name!}
-              icon={mutation.data?.icon!}
-              card={mutation.data?.card!}
+              name={mutation.data.name}
+              icon={mutation.data.icon}
+              card={mutation.data.card}
             />
           </div>
         </div>
